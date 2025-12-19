@@ -40,6 +40,9 @@ jobs:
       - name: Install Vercel CLI
         run: pnpm add -g vercel@latest
 
+      - name: Remove old Vercel config
+        run: rm -rf .vercel
+
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=development --token=$VERCEL_TOKEN
 
